@@ -1,0 +1,85 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.bange</groupId>
+  <artifactId>dubbo-demo</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>dubbo-demo</name>
+  <url>http://maven.apache.org</url>
+  <modules>
+    <module>order-service-provider</module>
+    <module>order-service-consumer</module>
+    <module>bangemall-common-api</module>
+      <module>bangefile-spring-boot-starter</module>
+  </modules>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <spring-boot.version>2.7.8</spring-boot.version>
+    <dubbo.version>3.2.0-beta.4</dubbo.version>
+    <curator-x-discovery.version>5.4.0</curator-x-discovery.version>
+    <zookeeper.version>3.7.1</zookeeper.version>
+    <fastjson2.version>2.0.26</fastjson2.version>
+    <nacos-client.version>2.0.4</nacos-client.version>
+  </properties>
+<dependencyManagement>
+  <dependencies>
+    <!-- Spring Boot -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-dependencies</artifactId>
+      <version>${spring-boot.version}</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+    <!-- Dubbo -->
+    <dependency>
+      <groupId>org.apache.dubbo</groupId>
+      <artifactId>dubbo-bom</artifactId>
+      <version>${dubbo.version}</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.dubbo</groupId>
+      <artifactId>dubbo-dependencies-zookeeper-curator5</artifactId>
+      <version>${dubbo.version}</version>
+      <type>pom</type>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.dubbo</groupId>
+      <artifactId>dubbo-spring-boot-starter</artifactId>
+      <version>${dubbo.version}</version>
+    </dependency>
+    <!-- fastjson2 -->
+    <dependency>
+      <groupId>com.alibaba.fastjson2</groupId>
+      <artifactId>fastjson2</artifactId>
+      <version>${fastjson2.version}</version>
+    </dependency>
+    <!--nacos-->
+    <dependency>
+      <groupId>com.alibaba.nacos</groupId>
+      <artifactId>nacos-client</artifactId>
+      <version>${nacos-client.version}</version>
+    </dependency>
+
+  </dependencies>
+</dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>${spring-boot.version}</version>
+      </plugin>
+
+    </plugins>
+  </build>
+</project>

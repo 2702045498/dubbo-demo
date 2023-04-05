@@ -1,0 +1,16 @@
+dubbo:
+  application:
+    name: order-service-provider
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: fastjson2
+  registry:
+#    address: zookeeper://${zookeeper.address:192.168.0.190}:2181
+    address: nacos://192.168.0.190:8848
+spring:
+  application:
+    name: order-service-provider
+
+server:
+  port: 9994
